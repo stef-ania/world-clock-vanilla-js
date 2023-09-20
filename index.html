@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="src/style.css" class="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+
+    <script src="https://kit.fontawesome.com/8fb397e125.js" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="src/script.js" class="javascript" />
     <title>World clock project</title>
   </head>
@@ -11,20 +17,24 @@
     <div class="wrapper">
       <header><h1>World clock</h1></header>
       <main>
-        <select>
+        <select class="select-style">
           <option value="">Select a city...</option>
           <option value="">London</option>
           <option value="">Tokyo</option>
         </select>
 
         <section class="city">
-          <h2>Cagliari</h2>
-          <div class="date">September 20th 2023</div>
+          <div>
+            <h2>Cagliari</h2>
+            <div class="date">September 20th 2023</div>
+          </div>
           <div class="time">11:37 <small>AM</small></div>
         </section>
         <section class="city">
-          <h2>Sydney</h2>
-          <div class="date">September 20th 2023</div>
+          <div>
+            <h2>Sydney</h2>
+            <div class="date">September 20th 2023</div>
+          </div>
           <div class="time">19:37 <small>AM</small></div>
         </section>
       </main>
