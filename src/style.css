@@ -17,21 +17,15 @@ html {
 Global styles 
 */
 :root {
-  --primaryColor: #cca8e9;
-  --secondaryColor: #c3bef0;
-  --tertiaryColor: #cadefc;
-  --cuarterColor: #defcf9;
+  --primaryColor: hsl(216 89% 63% / 1);
+  --secondaryColor: #cadefc;
 
   --textColor: rgba(51, 51, 51, 1);
-
-  --select-border: #777;
-  --select-focus: blue;
-  --select-arrow: var(--select-border);
 }
 
 body {
   /*background-image: var(--gradient);*/
-  background-color: var(--tertiaryColor);
+  background-color: var(--secondaryColor);
   background-repeat: no-repeat;
   color: var(--textColor);
   font-family: Arial, Helvetica, sans-serif;
@@ -45,13 +39,13 @@ h1,
 h2 {
   font-family: "Montserrat", Helvetica, Arial, sans-serif;
   font-weight: 700;
-  text-transform: uppercase;
 }
 
 h1 {
   font-size: 2.5rem;
   line-height: 3rem;
   text-align: center;
+  text-transform: uppercase;
 }
 
 h2 {
@@ -70,56 +64,55 @@ h2 {
 }
 
 select {
-  /* A reset of styles, including removing the default dropdown arrow*/
   appearance: none;
-  /* Additional resets for further consistency*/
-  background-color: transparent;
-  border: none;
 
-  cursor: inherit;
-  display: block;
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
+  /* styling */
+  background-color: #fff;
+  border: thin solid var(--primaryColor);
+  border-radius: 8px;
+  box-sizing: border-box;
+  display: inline-block;
+  font: inherit;
+  line-height: 1.5em;
+  /* reset */
   margin: 0;
-  outline: none;
-  padding: 1rem;
+  padding: 0.5em 3.5em 0.5em 1em;
+}
+
+select.minimal {
+  background-image: linear-gradient(45deg, transparent 50%, hsl(216 89% 43% / 1) 50%),
+    linear-gradient(135deg, hsl(216 89% 43% / 1) 50%, transparent 50%),
+    linear-gradient(to right, var(--primaryColor), var(--primaryColor));
+  background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
+  background-repeat: no-repeat;
+  background-size: 5px 5px, 5px 5px, 1px 1.5em;
+  border: 2px solid var(--primaryColor);
   width: 100%;
+}
+
+select.minimal:focus {
+  background-image: linear-gradient(45deg, hsl(216 89% 43% / 1) 50%, transparent 50%),
+    linear-gradient(135deg, transparent 50%, hsl(216 89% 43% / 1) 50%), linear-gradient(to right, #ccc, #ccc);
+  background-position: calc(100% - 15px) 1em, calc(100% - 20px) 1em, calc(100% - 2.5em) 0.5em;
+  background-repeat: no-repeat;
+  background-size: 5px 5px, 5px 5px, 1px 1.5em;
+  border: 2px solid var(--primaryColor);
+  box-shadow: 0px 13px 13px -19px hsl(216 89% 43% / 1);
+  outline: 0;
+}
+
+select:-moz-focusing {
+  color: transparent;
+  text-shadow: 0 0 0 #333;
 }
 
 select::-ms-expand {
   display: none;
 }
 
-.select-style {
-  background-color: #fff;
-  background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
-  border: 1px solid var(--select-border); /*var(--select-border)*/
-  border-radius: 12px;
-  color: var(--textColor);
-  cursor: pointer;
-  display: grid;
-  font-size: 1rem;
-  line-height: 1.1rem;
-  padding: 1rem;
-  width: 100%;
-}
-
-.select::after {
-  content: "\f007";
-  /*
-  background-color: var(--select-arrow);
-  clip-path: polygon(100% 0%, 0 0%, 50% 100%);
-  content: "";
-  height: 0.5em;
-  width: 0.8em;*/
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-}
-
 .city {
   align-items: center;
-  border-bottom: 1px dashed var(--tertiaryColor);
+  border-bottom: 1px dashed var(--secondaryColor);
   display: flex;
   justify-content: space-between;
   margin: 2rem 0 0;
@@ -132,9 +125,11 @@ select::-ms-expand {
 
 .date {
   color: var(--textColor);
-  font-size: 0.875rem;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
   line-height: 0.875rem;
-  opacity: 0.8;
+  opacity: 0.7;
+  text-transform: uppercase;
 }
 
 .time {
@@ -158,4 +153,14 @@ footer {
   margin: 1rem auto 1rem;
   padding: 1rem 0;
   text-align: center;
+}
+
+footer a {
+  color: var(--primaryColor);
+  transition: all 300ms ease-in-out;
+}
+
+footer a:hover {
+  color: hsl(216 89% 43% / 1);
+  transition: all 300ms ease-in-out;
 }
