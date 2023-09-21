@@ -19,7 +19,6 @@ Global styles
 :root {
   --primaryColor: hsl(216 89% 63% / 1);
   --secondaryColor: #cadefc;
-
   --textColor: rgba(51, 51, 51, 1);
 }
 
@@ -50,7 +49,8 @@ h1 {
 
 h2 {
   font-size: 2rem;
-  line-height: 1rem;
+  line-height: 2rem;
+  margin: 0.8rem 0;
 }
 
 .wrapper {
@@ -138,7 +138,7 @@ select::-ms-expand {
   font-family: "Montserrat", Helvetica, Arial, sans-serif;
   font-size: 3rem;
   font-weight: 700;
-  line-height: 0;
+  line-height: 3.5rem;
 }
 
 small {
@@ -165,4 +165,22 @@ footer a {
 footer a:hover {
   color: hsl(216 89% 43% / 1);
   transition: all 300ms ease-in-out;
+}
+
+@media screen and (max-width: 480px) {
+  .wrapper {
+    margin: 1rem;
+    max-width: 600px;
+    padding: 1rem;
+  }
+
+  .city {
+    align-items: flex-start;
+    flex-direction: column;
+    min-height: 160px;
+  }
+
+  .time {
+    padding-top: 1rem;
+  }
 }
