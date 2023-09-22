@@ -17,14 +17,25 @@ html {
 Global styles 
 */
 :root {
-  --primaryColor: hsl(216 89% 63% / 1);
-  --secondaryColor: #cadefc;
+  --primaryColor: #625ef5; /*hsl(216 89% 63% / 1);*/
+  --secondaryColor: #b7b5ff;
+  --tertiaryColor-10: #eff0ff;
+  --tertiaryColor-20: #d1d1f7;
+  --tertiaryColor-30: #b2b3f1;
+  --tertiaryColor-40: #9f92ec; /* No usado por el momento*/
+  --tertiaryColor-60: #4b42ad;
   --textColor: rgba(51, 51, 51, 1);
+  --textColorLight: rgb(124 124 148);
+  --primaryFontFamily: "Montserrat", Helvetica, Arial, sans-serif;
+  --fontWeightNormal: 400;
+  --fontWeightBold: 700;
+  --fontWeightExtraBold: 800;
+  --numericFontFamily: "Inconsolata", monospace;
 }
 
 body {
   /*background-image: var(--gradient);*/
-  background-color: var(--secondaryColor);
+  background-color: var(--tertiaryColor-20);
   background-repeat: no-repeat;
   color: var(--textColor);
   font-family: Arial, Helvetica, sans-serif;
@@ -36,15 +47,16 @@ body {
 
 h1,
 h2 {
-  font-family: "Montserrat", Helvetica, Arial, sans-serif;
-  font-weight: 700;
+  font-family: var(--primaryFontFamily);
+  font-weight: var(--fontWeightBold);
 }
 
 h1 {
+  color: var(--primaryColor);
   font-size: 2.5rem;
   line-height: 3rem;
   text-align: center;
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
 }
 
 h2 {
@@ -56,7 +68,7 @@ h2 {
 .wrapper {
   background-color: rgba(255, 255, 255, 0.9);
   border-radius: 24px;
-  box-shadow: 0px 18px 33px 0px rgb(178 200 234);
+  box-shadow: 0px 18px 33px 0px var(--tertiaryColor-30);
   display: block;
   margin: 2rem auto;
   max-width: 600px;
@@ -82,19 +94,20 @@ select {
 }
 
 select.minimal {
-  background-image: linear-gradient(45deg, transparent 50%, hsl(216 89% 43% / 1) 50%),
-    linear-gradient(135deg, hsl(216 89% 43% / 1) 50%, transparent 50%),
-    linear-gradient(to right, var(--primaryColor), var(--primaryColor));
+  background-image: linear-gradient(45deg, transparent 50%, var(--secondaryColor) 50%),
+    linear-gradient(135deg, var(--secondaryColor) 50%, transparent 50%), linear-gradient(to right, #b7b5ff, #b7b5ff);
+
   background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
   background-repeat: no-repeat;
   background-size: 5px 5px, 5px 5px, 1px 1.5em;
-  border: 2px solid var(--primaryColor);
-  width: 100%;
+  border: 2px solid #b7b5ff;
+  width: 100%; /*var(--primaryColor);*/
 }
 
 select.minimal:focus {
-  background-image: linear-gradient(45deg, hsl(216 89% 43% / 1) 50%, transparent 50%),
-    linear-gradient(135deg, transparent 50%, hsl(216 89% 43% / 1) 50%), linear-gradient(to right, #ccc, #ccc);
+  background-image: linear-gradient(45deg, var(--primaryColor) 50%, transparent 50%),
+    linear-gradient(135deg, transparent 50%, var(--primaryColor) 50%),
+    linear-gradient(to right, var(--primaryColor), var(--primaryColor));
   background-position: calc(100% - 15px) 1em, calc(100% - 20px) 1em, calc(100% - 2.5em) 0.5em;
   background-repeat: no-repeat;
   background-size: 5px 5px, 5px 5px, 1px 1.5em;
@@ -114,7 +127,7 @@ select::-ms-expand {
 
 .city {
   align-items: center;
-  border-bottom: 1px dashed var(--secondaryColor);
+  border-bottom: 1px dashed var(--tertiaryColor-20);
   display: flex;
   justify-content: space-between;
   margin: 2rem 0 0;
@@ -126,28 +139,31 @@ select::-ms-expand {
 }
 
 .date {
-  color: var(--textColor);
-  font-size: 0.75rem;
-  letter-spacing: 1px;
+  color: var(--textColorLight);
+  font-family: var(--numericFontFamily);
+  font-size: 0.875rem;
+  letter-spacing: 3px;
   line-height: 0.875rem;
   opacity: 0.7;
   text-transform: uppercase;
 }
 
 .time {
-  font-family: "Montserrat", Helvetica, Arial, sans-serif;
+  font-family: var(--numericFontFamily);
   font-size: 3rem;
-  font-weight: 700;
+  font-weight: var(--fontWeightExtraBold);
   line-height: 3.5rem;
 }
 
 small {
+  font-family: var(--primaryFontFamily);
   font-size: 1.5rem;
+  font-weight: var(--fontWeightBold);
   vertical-align: middle;
 }
 
 footer {
-  background-color: rgb(202 222 252 / 20%);
+  background-color: var(--tertiaryColor-10);
   border-radius: 4px;
   color: rgba(51, 51, 51, 0.8);
   font-size: 0.75rem;
@@ -163,7 +179,7 @@ footer a {
 }
 
 footer a:hover {
-  color: hsl(216 89% 43% / 1);
+  color: var(--tertiaryColor-60);
   transition: all 300ms ease-in-out;
 }
 
