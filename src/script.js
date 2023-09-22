@@ -1,13 +1,17 @@
 function updateTime() {
   //Rome
   let romeElement = document.querySelector("#rome");
-  let romeDateElement = romeElement.querySelector(".date");
-  let romeTimeElement = romeElement.querySelector(".time");
 
-  let romeTime = moment().tz("Europe/Rome");
+  //With this "if" this element appears just if Rome is displayed
+  if (romeElement) {
+    let romeDateElement = romeElement.querySelector(".date");
+    let romeTimeElement = romeElement.querySelector(".time");
 
-  romeDateElement.innerHTML = romeTime.format("MMMM Do YYYY");
-  romeTimeElement.innerHTML = romeTime.format("hh:mm:ss [<small>]A[</small>]");
+    let romeTime = moment().tz("Europe/Rome");
+
+    romeDateElement.innerHTML = romeTime.format("MMMM Do YYYY");
+    romeTimeElement.innerHTML = romeTime.format("hh:mm:ss [<small>]A[</small>]");
+  }
 }
 
 updateTime();
@@ -15,6 +19,11 @@ setInterval(updateTime, 1000);
 
 function showCitySelected(event) {
   let cityTimeZone = event.target.value;
+
+  if (cityTimeZone === "current") {
+    cityTimeZone = moment.tz.guess();
+  }
+
   let cityTime = moment().tz(cityTimeZone);
   let cityName = cityTimeZone.replace("_", " ").split("/")[1];
   let cityDateFormat = cityTime.format("MMMM Do YYYY");
