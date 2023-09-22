@@ -22,25 +22,39 @@
     <div class="wrapper">
       <header><h1>World clock</h1></header>
       <main>
-        <select class="minimal">
+        <select class="minimal" id="select-city">
           <option value="">Select a city...</option>
-          <option value="">Rome</option>
-          <option value="">Sydney</option>
+          <option value="Australia/Sydney">Sydney</option>
+          <option value="Africa/Cairo">Cairo</option>
+          <option value="Pacific/Honolulu">Honolulu</option>
+          <option value="America/Bogota">Bogota</option>
+          <option value="Europe/Rome">Rome</option>
+          <option value="Asia/Shanghai">Shanghai</option>
+          <option value="Asia/Tokyo">Tokyo</option>
         </select>
 
-        <section class="city" id="rome">
-          <div>
-            <h2>Rome</h2>
-            <div class="date"></div>
-          </div>
-          <div class="time"></div>
-        </section>
-        <section class="city" id="sydney">
-          <div>
-            <h2>Sydney</h2>
-            <div class="date"></div>
-          </div>
-          <div class="time"></div>
+        <section id="cities">
+          <article class="city" id="rome">
+            <div>
+              <h2>Rome</h2>
+              <div class="date"></div>
+            </div>
+            <div class="time"></div>
+          </article>
+          <!--<article class="city" id="rome">
+            <div>
+              <h2>Rome</h2>
+              <div class="date"></div>
+            </div>
+            <div class="time"></div>
+          </article>
+          <article class="city" id="sydney">
+            <div>
+              <h2>Sydney</h2>
+              <div class="date"></div>
+            </div>
+            <div class="time"></div>
+          </article>-->
         </section>
       </main>
 

@@ -8,17 +8,21 @@ function updateTime() {
 
   romeDateElement.innerHTML = romeTime.format("MMMM Do YYYY");
   romeTimeElement.innerHTML = romeTime.format("hh:mm:ss [<small>]A[</small>]");
-
-  //Sydney
-  let sydneyElement = document.querySelector("#sydney");
-  let sydneyDateElement = sydneyElement.querySelector(".date");
-  let sydneyTimeElement = sydneyElement.querySelector(".time");
-
-  let sydneyTime = moment().tz("Australia/Sydney");
-
-  sydneyDateElement.innerHTML = sydneyTime.format("MMMM Do YYYY");
-  sydneyTimeElement.innerHTML = sydneyTime.format("hh:mm:ss [<small>]A[</small>]");
 }
 
 updateTime();
 setInterval(updateTime, 1000);
+
+function showCitySelected(event) {
+  let cityTimeZone = event.target.value;
+  let cityTime = moment().tz(cityTimeZone);
+  let cityName = cityTimeZone.replace("_", " ").split("/")[1];
+  let cityDateFormat = cityTime.format("MMMM Do YYYY");
+  let cityTimeFormat = cityTime.format("hh:mm:ss");
+  let cityTimeFormatA = cityTime.format("A");
+  let citiesElement = document.querySelector("#cities");
+  citiesElement.innerHTML = ` <article class="city"> <div> <h2>${cityName}</h2> <div class="date">${cityDateFormat}</div> </div> <div class="time">${cityTimeFormat} <small>${cityTimeFormatA}</small></div> </article> `;
+}
+
+let selectCity = document.querySelector("#select-city");
+selectCity.addEventListener("change", showCitySelected);
