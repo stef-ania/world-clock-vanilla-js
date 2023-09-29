@@ -125,12 +125,19 @@ select::-ms-expand {
   display: none;
 }
 
+#SVG-img {
+  border-radius: 24px;
+  display: none;
+  margin: 2rem auto 0;
+  max-width: 100%;
+}
+
 .city {
   align-items: center;
   border-bottom: 1px dashed var(--tertiaryColor-20);
   display: flex;
   justify-content: space-between;
-  margin: 2rem 0 0;
+  margin: 1rem 0 0;
   padding-bottom: 2rem;
 }
 
