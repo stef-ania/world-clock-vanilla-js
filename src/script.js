@@ -12,6 +12,28 @@ function updateTime() {
     romeDateElement.innerHTML = romeTime.format("MMMM Do YYYY");
     romeTimeElement.innerHTML = romeTime.format("hh:mm:ss [<small>]A[</small>]");
   }
+
+  //Nairobi
+  let nairobiElement = document.querySelector("#nairobi");
+
+  let nairobiDateElement = nairobiElement.querySelector(".date");
+  let nairobiTimeElement = nairobiElement.querySelector(".time");
+
+  let nairobiTime = moment().tz("Africa/Nairobi");
+
+  nairobiDateElement.innerHTML = nairobiTime.format("MMMM Do YYYY");
+  nairobiTimeElement.innerHTML = nairobiTime.format("hh:mm:ss [<small>]A[</small>]");
+
+  //Tahiti
+  let tahitiElement = document.querySelector("#tahiti");
+
+  let tahitiDateElement = tahitiElement.querySelector(".date");
+  let tahitiTimeElement = tahitiElement.querySelector(".time");
+
+  let tahitiTime = moment().tz("Pacific/Tahiti");
+
+  tahitiDateElement.innerHTML = tahitiTime.format("MMMM Do YYYY");
+  tahitiTimeElement.innerHTML = tahitiTime.format("hh:mm:ss [<small>]A[</small>]");
 }
 
 updateTime();
