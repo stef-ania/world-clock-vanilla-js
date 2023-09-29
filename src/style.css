@@ -168,6 +168,21 @@ small {
   vertical-align: middle;
 }
 
+.back-link-container {
+  margin: 1rem 0 2rem;
+}
+
+a.back-link {
+  color: var(--primaryColor) !important;
+  font-size: 0.75rem;
+  transition: all 300ms ease-in-out;
+}
+
+a.back-link:hover {
+  color: var(--tertiaryColor-60) !important;
+  transition: all 300ms ease-in-out;
+}
+
 footer {
   background-color: var(--tertiaryColor-10);
   border-radius: 4px;

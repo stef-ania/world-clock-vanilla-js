@@ -101,6 +101,7 @@ function updateHTML(cityInfo) {
       </div>
       <div class="time">${cityInfo.cityTimeFormat} <small>${cityInfo.cityTimeFormatA}</small></div>
     </article>
+    <div class="back-link-container"><a href="/" class="back-link">Back to previous cities </a></div>
  `;
   citiesElement.innerHTML = cityHTML;
 }
