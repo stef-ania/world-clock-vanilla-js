@@ -92,7 +92,7 @@ function updateHTML(cityInfo) {
 
   const cityHTML = `
     <div class="svg-container">
-        <img src="${svgImages[cityInfo.timePeriod]}" alt="${cityInfo.timePeriod}" class="SVG-time-of-day" />
+        <img src="${svgImages[cityInfo.timePeriod]}" alt="${cityInfo.timePeriod}" class="SVG-time-of-day" /> 
     </div>
     <article class="city">
       <div>
@@ -101,7 +101,6 @@ function updateHTML(cityInfo) {
       </div>
       <div class="time">${cityInfo.cityTimeFormat} <small>${cityInfo.cityTimeFormatA}</small></div>
     </article>
-    <div class="back-link-container"><a href="/" class="back-link">Back to previous cities </a></div>
  `;
   citiesElement.innerHTML = cityHTML;
 }

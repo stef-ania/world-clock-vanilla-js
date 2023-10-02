@@ -51,12 +51,20 @@ h2 {
   font-weight: var(--fontWeightBold);
 }
 
-h1 {
+h1,
+a.home-link {
   color: var(--primaryColor);
   font-size: 2.5rem;
   line-height: 3rem;
   margin-bottom: 2.5rem;
   text-align: center;
+  text-decoration: none;
+  transition: all 300ms ease-in-out;
+}
+
+a.home-link:hover {
+  color: var(--tertiaryColor-60);
+  transition: all 300ms ease-in-out;
 }
 
 h2 {
@@ -166,21 +174,6 @@ small {
   font-size: 1.5rem;
   font-weight: var(--fontWeightBold);
   vertical-align: middle;
-}
-
-.back-link-container {
-  margin: 1rem 0 2rem;
-}
-
-a.back-link {
-  color: var(--primaryColor) !important;
-  font-size: 0.75rem;
-  transition: all 300ms ease-in-out;
-}
-
-a.back-link:hover {
-  color: var(--tertiaryColor-60) !important;
-  transition: all 300ms ease-in-out;
 }
 
 footer {
